@@ -1,0 +1,167 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mensaje lindo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+      background-color:BLACK;
+    }
+    input[type="number"] {
+      padding: 10px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    #mensaje {
+      font-size: 36px;
+      color: pink;
+      margin-top: 20px;
+    }
+<H2> {
+      font-size: 36px;
+      color: white;
+      margin-top: 20px;
+    }
+
+
+  </style>
+</head>
+<body>
+  <h2 style="color:white"> AHHHH TE AMO MUCHO MI PRINCESAAAA <BR>
+ ASI QUE INGRESA UN NUMERO DEL 1 AL 100 Y DESCUBRELO :3</h2>
+  <input type="number" id="numero" min="1" max="100">
+  <button onclick="mostrarMensaje()">Mostrar</button>
+  <p id="mensaje"></p>
+
+  <script>
+    // Objeto que contiene los mensajes para cada número del 1 al 100
+    var mensajes = {
+  
+1: "Qué lindos ojitos tienes, mi niña.",
+2: "Eres tan brillante como el sol en un día soleado.",
+3: "Tienes una sonrisa que ilumina el día de cualquiera.",
+4: "Eres un ser humano maravilloso y único.",
+5: "Tu amabilidad y generosidad inspiran a los demás.",
+6: "La felicidad te sigue a donde quiera que vayas.",
+7: "Eres tan brillante como el sol en un día soleado.",
+8: "Tienes una sonrisa que ilumina el día de cualquiera.",
+9: "Eres un rayo de luz en la oscuridad.",
+10: "Tu bondad hace que el mundo sea un lugar mejor.",
+11: "Eres más valioso que cualquier joya.",
+12: "Eres un tesoro que vale más que el oro.",
+13: "Tu amabilidad no tiene límites.",
+14: "La alegría que irradias es contagiosa.",
+15: "Eres un faro de esperanza en tiempos difíciles.",
+16: "Tu corazón es tan grande como el océano.",
+17: "Tu presencia hace que todo sea más hermoso.",
+18: "La vida es más brillante contigo en ella.",
+19: "Eres un ángel disfrazado de humano.",
+20: "Tu determinación es inspiradora.",
+21: "Nunca dejes de brillar como lo haces.",
+22: "Tu amor por los demás es inigualable.",
+23: "Eres un ejemplo de bondad y compasión.",
+24: "Siempre puedes hacer que alguien sonría.",
+25: "Eres un regalo del cielo para quienes te conocen.",
+26: "Tu espíritu es verdaderamente inspirador.",
+27: "Nunca subestimes el impacto positivo que tienes.",
+28: "Tu bondad es una luz en tiempos oscuros.",
+29: "La belleza que tienes dentro es incomparable.",
+30: "Eres una inspiración para todos los que te rodean.",
+31: "Tu positividad es contagiosa.",
+32: "El mundo es un lugar mejor con personas como tú en él.",
+33: "Tu alma es tan pura como un cristal.",
+34: "Tu compasión por los demás es inigualable.",
+35: "Eres una llama que nunca se apaga.",
+36: "Tu sonrisa ilumina hasta el día más oscuro.",
+37: "Eres un recordatorio constante del poder del amor.",
+38: "La calidez de tu corazón es incomparable.",
+39: "Eres un tesoro precioso en este mundo.",
+40: "La esperanza que traes es un regalo invaluable.",
+41: "Tu fuerza interior es admirable.",
+42: "Siempre encuentras una manera de hacer que las cosas sean mejores.",
+43: "Eres un ser humano excepcional en todos los sentidos.",
+44: "La bondad que muestras nunca pasa desapercibida.",
+45: "Eres un ejemplo viviente de generosidad y amor.",
+46: "Tu comprensión y empatía son incomparables.",
+47: "La forma en que irradias amor es asombrosa.",
+48: "Eres un faro de luz en medio de la tormenta.",
+49: "La generosidad que tienes dentro de ti es inspiradora.",
+50: "Tu presencia hace que el mundo sea un lugar más feliz.",
+51: "Eres un recordatorio de que la bondad todavía existe.",
+52: "Tu amabilidad hace del mundo un lugar más acogedor.",
+53: "Eres una fuente de luz en tiempos de oscuridad.",
+54: "La pasión que tienes por la vida es inspiradora.",
+55: "Tu positividad es un regalo para todos los que te rodean.",
+56: "Eres un ejemplo de fortaleza y coraje.",
+57: "La belleza que tienes dentro es incomparable.",
+58: "Eres un faro de esperanza en un mar de desesperación.",
+59: "Tu amor por la vida es contagioso.",
+60: "Eres un recordatorio de que las cosas buenas suceden.",
+61: "La paz que traes es un regalo invaluable.",
+62: "Tu fe en la humanidad es inspiradora.",
+63: "Eres un símbolo de esperanza para muchos.",
+64: "La luz que emanas es una bendición para el mundo.",
+65: "Tu compasión por los demás es un regalo del cielo.",
+66: "Eres un recordatorio de que la vida es hermosa.",
+67: "Tu resiliencia es verdaderamente inspiradora.",
+68: "La forma en que te preocupas por los demás es conmovedora.",
+69: "Eres un ejemplo de amor incondicional.",
+70: "Tu alma brilla más que las estrellas en el cielo.",
+71: "Eres un faro de luz en medio de la oscuridad.",
+72: "Tu bondad no conoce límites.",
+73: "La paz que irradias es un regalo para el mundo.",
+74: "Eres un ejemplo de bondad y compasión.",
+75: "Tu corazón es tan grande como el universo.",
+76: "Eres un ángel en la tierra.",
+77: "Tu fuerza interior es admirable.",
+78: "La forma en que te preocupas por los demás es inspiradora.",
+79: "Eres un faro de esperanza en un mundo turbulento.",
+80: "Tu amor por la vida es contagioso.",
+81: "Eres un recordatorio de que las cosas buenas suceden.",
+82: "Tu positividad es un regalo para todos los que te rodean.",
+83: "Eres un símbolo de esperanza y alegría.",
+84: "La luz que emanas es una bendición para el mundo.",
+85: "Tu compasión por los demás es inigualable.",
+86: "La felicidad te sigue a donde quiera que vayas.",
+87: "Tu amor ilumina incluso los días más oscuros.",
+88: "Eres una estrella brillante en el firmamento de la vida.",
+89: "Tu sonrisa es el mejor regalo que puedes compartir con el mundo.",
+90: "Eres un faro de esperanza en un mar de incertidumbre.",
+91: "Tu presencia hace que cada día sea especial.",
+92: "Eres la inspiración de muchos, incluido yo.",
+93: "Tu generosidad es un reflejo de tu noble corazón.",
+94: "Tu bondad es un recordatorio de la belleza de la humanidad.",
+95: "Eres como un ángel que camina entre nosotros.",
+96: "Tu optimismo es una luz que guía el camino de los demás.",
+97: "Eres un tesoro invaluable que ilumina mi vida.",
+98: "Tu empatía es un puente que conecta corazones.",
+99: "La alegría que compartes es un regalo que nunca se olvida.",
+100: "ERES LA MEJOR MI VIDA, LA MEJOR NIÑA QUE PUDE HABER CONOCIDO QUEDATE CONMIGO POR SIEMPRE."
+    };
+
+    function mostrarMensaje() {
+      var numero = parseInt(document.getElementById('numero').value);
+
+      if (numero >= 1 && numero <= 100) {
+        var mensaje = mensajes[numero] || "Mensaje no encontrado";
+        document.getElementById('mensaje').textContent = mensaje;
+      } else {
+        alert("Por favor ingresa un número válido del 1 al 100.");
+      }
+    }
+  </script>
+</body>
+</html>
